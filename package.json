@@ -1,0 +1,24 @@
+{
+  "name": "wechat-bot",
+  "version": "1.0.0",
+  "description": "微信机器人",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamzeki/wechat-bot.git"
+  },
+  "author": "zeki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamzeki/wechat-bot/issues"
+  },
+  "homepage": "https://github.com/iamzeki/wechat-bot#readme",
+  "dependencies": {
+    "qrcode-terminal": "^0.12.0",
+    "wechaty": "^0.22.6",
+    "wechaty-puppet-puppeteer": "^0.14.1"
+  }
+}
