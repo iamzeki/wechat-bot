@@ -3,8 +3,10 @@ const TerminalCode = require('qrcode-terminal');
 const Message = require('./message');
 
 const StartBot = (name) => {
+  const puppet = 'wechaty-puppet-wechat4u';
   const bot = new Wechaty({
-    name: name
+    name: name,
+    puppet
   });
   bot.on('scan', (qrcode, status) => {
     console.log(`扫描二维码: ${status}\nhttps://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(qrcode)}&size=220x220&margin=20`)

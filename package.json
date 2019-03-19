@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/iamzeki/wechat-bot#readme",
   "dependencies": {
+    "puppeteer": "^1.13.0",
     "qrcode-terminal": "^0.12.0",
     "wechaty": "^0.22.6",
     "wechaty-puppet-puppeteer": "^0.14.1"
