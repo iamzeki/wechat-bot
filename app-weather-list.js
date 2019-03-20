@@ -32,7 +32,7 @@ const {MOJI_PROVINCE_HOST} = require('./config');
     const hrefA = `https://tianqi.moji.com${href}`;
     const cityPage = await browser.newPage();
     console.log(`goto ${hrefA}`);
-    await cityPage.goto(hrefA)
+    await cityPage.goto(hrefA);
     const cityListPage = await cityPage.$('.city_hot');
     weatherDetail[i].children = await cityListPage.$$eval('li', (lis) => {
       return lis.map(li => {
