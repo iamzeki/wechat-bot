@@ -5,7 +5,7 @@ const filePath = path.join(__dirname, '../data/weather-list.json');
 const weatherList = JSON.parse(fs.readFileSync(filePath));
 
 // 匹配城市
-const matchCity = (city) => {
+const _matchCity = (city) => {
   let result = [];
   const forEachChild = (children) => {
     children && children.forEach(item => {
@@ -42,7 +42,7 @@ const matchCity = (city) => {
 };
 
 // 采集今天天气
-const getTodayWeather = async (url) => {
+const _getTodayWeather = async (url) => {
   const browser = await puppeteer.launch();
   const weatherPage = await browser.newPage();
   await weatherPage.goto(url);
@@ -59,13 +59,13 @@ const getTodayWeather = async (url) => {
 };
 
 module.exports = async (city) => {
-  const result = matchCity(city);
+  const result = _matchCity(city);
   switch (result.length) {
     case 0:
       return '';
     case 1:
       const item = result[0];
-      const wea = await getTodayWeather(item.href);
+      const wea = await _getTodayWeather(item.href);
       return `${item.city}\n${wea}`;
     default:
       return '查找到多个结果，请精确到具体城市(区、县)\n' + result.map(({city}) => city).toString()

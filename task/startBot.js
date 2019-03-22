@@ -8,7 +8,7 @@ const StartBot = (name) => {
     name: name
   });
   bot.on('scan', (qrcode, status) => {
-    console.log(`扫描二维码: ${status}\nhttps://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(qrcode)}&size=220x220&margin=20`)
+    console.log(`扫描二维码: ${status}\nhttps://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(qrcode)}&size=160x160&margin=20`)
     TerminalCode.generate(qrcode, {small: true});
   });
   bot.on('logout', user => {
